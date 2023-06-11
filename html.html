@@ -1,27 +1,22 @@
- let _id
-        let count = 2
-        function _add(){
-        let str = document.getElementById('inp').value
-        if(str === '' || str === null){
-            document.getElementById('inp').value=null
-            document.getElementById('inp').focus()
-        }else{
-            document.getElementById('ul').innerHTML+=`<li classname='col-3 list border border-bottom py-3' id=para${count}><b>${str}</b> <span onclick="_edit(this)"><i class="bi bi-pencil-square"></i></span> <input type="checkbox" />  </li>`
-            document.getElementById('inp').value=null
-            document.getElementById('inp').focus()
-        }
-    }
-        function _delete() {
-            const _li = document.querySelectorAll('#ul li')
-            _li.forEach(function(val){
-            let _child = val.children
-            if(
-                _child[2].checked
-            ){
-                val.remove()
-            }
-        })
-    }
-        function _removeAdd() {
-        document.getElementById('top').style.opacity='0'
-}
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> To Do List</title>
+    <link rel="stylesheet" href="css.css">
+  </head>
+  
+  <body>
+    <div classname="container col-12">
+      <div class="d-flex justify-content-center align-items-center to"><h2>To-Do List</h2></div>
+       <div class="do">
+        <div class="info">
+            <input type="text" classname="col-8" id="inp"  placeholder="Add Item"/>
+            <button classname="col-2 btn btn-success" onclick='_add()'>+</button>
+            <button classname="col-2 btn btn-danger" onclick='_delete()'>delete</button>
+        </div>
+            <ul id="ul"></ul>
+    </div>
+    </div>
+    <script src="js.js"></script>
+  </body>
+</html>
